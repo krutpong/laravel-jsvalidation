@@ -52,13 +52,14 @@ class MessageParser
      */
     protected function fakeValidationData($attribute, $rule, $parameters)
     {
-        $files = $this->validator->getFiles();
+        //$files = $this->validator->getFiles();
         $data = $this->validator->getData();
 
-        $this->fakeFileData($files, $attribute);
+        //$this->fakeFileData($files, $attribute);
         $this->fakeRequiredIfData($data, $rule, $parameters);
 
-        return compact('data', 'files');
+        //return compact('data', 'files');
+        return compact('data');
     }
 
     /**
@@ -103,7 +104,7 @@ class MessageParser
      */
     protected function setValidationData($data)
     {
-        $this->validator->setFiles($data['files']);
+        //$this->validator->setFiles($data['files']);
         $this->validator->setData($data['data']);
     }
 }
